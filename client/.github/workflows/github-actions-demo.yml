@@ -1,0 +1,10 @@
+on:
+  pull_request:
+    branches: [ "develop" ]
+
+jobs:
+  runs-on: "ubuntu-24.04"
+  steps:
+    - run: npm install
+    - run: npm run start
+    - run: npm run test-component
