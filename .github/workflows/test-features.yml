@@ -5,6 +5,8 @@ on:
 jobs:
   test:
     runs-on: "ubuntu-24.04"
+    env:
+      mongodb: ${{ secrets.MONGODB_URI }}
     steps:
       - uses: actions/checkout@v4.2.2
       - run: npm run render-build
