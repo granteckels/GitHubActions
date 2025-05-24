@@ -1,0 +1,13 @@
+on:
+  pull_request:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy-render:
+    runs-on: ubuntu-latest
+    env:
+      deploy-url: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - run: curl '$deploy_url'
